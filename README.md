@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+# 🚀 Moveo — Landing Page Institucional & Soluções em Saúde
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
 
-Currently, two official plugins are available:
+Landing page institucional moderna, de alta performance e visualmente sofisticada desenvolvida para a **Moveo (Tecnologia e Inovação em Saúde & Neurociência)**, utilizando **React 19**, **TypeScript**, **Vite** e containerização com **Docker** e **Nginx**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ✨ **Design Moderno & Responsivo:** Layout adaptável para smartphones, tablets e desktops com estética minimalista e grid dinâmico.
+- ⚡ **Performance com Vite & React 19:** Carregamento quase instantâneo e bundle otimizado.
+- 🧭 **Navegação Interativa:** Efeitos de scroll suave, navbar adaptativa e seções de Recursos, Soluções e Contato.
+- 🎨 **Ícones & Estilos:** Integração com **Lucide React** e estilização customizada de componentes e gradientes.
+- 🐳 **Deploy Otimizado com Docker:** Build multi-stage com servidor leve Nginx para entrega rápida de arquivos estáticos.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🏗️ Estrutura do Projeto
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+moveo-site/
+├── src/
+│   ├── assets/           # Logotipos, ícones e mídias visuais
+│   ├── App.tsx           # Estrutura principal da landing page e seções
+│   ├── App.css           # Estilos e animações específicas dos componentes
+│   ├── index.css         # Reset global e variáveis de design system
+│   └── main.tsx          # Ponto de entrada React
+├── Dockerfile            # Multi-stage build (Node build -> Nginx alpine)
+├── nginx.conf            # Configuração de proxy e cache estático Nginx
+├── index.html            # Estrutura HTML base e meta tags
+└── package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛠️ Tecnologias Utilizadas
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Biblioteca:** [React 19](https://react.dev/)
+- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
+- **Ferramenta de Build:** [Vite](https://vitejs.dev/)
+- **Ícones:** [Lucide React](https://lucide.dev/)
+- **Deploy:** Docker & Nginx Alpine
+
+---
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+- [Node.js](https://nodejs.org/) (v18+)
+- [npm](https://www.npmjs.com/)
+
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/douglasmeneses/moveo-site.git
+cd moveo-site
 ```
+
+### 2. Instalar as dependências e iniciar
+```bash
+npm install
+npm run dev
+```
+Acesse `http://localhost:5173` no seu navegador.
+
+### 3. Executar via Docker
+```bash
+docker build -t moveo-site .
+docker run -d -p 80:80 moveo-site
+```
+Acesse `http://localhost:80`.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Douglas Meneses**.
+
+- 💼 GitHub: [@douglasmeneses](https://github.com/douglasmeneses)
+- ✉️ Email: [meneses.doug@gmail.com](mailto:meneses.doug@gmail.com)
